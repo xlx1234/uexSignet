@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<widget appId="sdk10098" channelCode="000" height="480" sreensize="3.5" version="2.75" widgetId="" width="320">
+  <name>Signet插件</name>
+  <description>newversion</description>
+  <author email="yipeng.zhang@zymobi.com">
+  </author>
+  <icon src="icon.png">
+  </icon>
+  <license href="">
+  </license>
+  <content encoding="utf-8" src="pages/uexSignet.html">
+  </content>
+  <updateurl></updateurl>
+  <logserverip></logserverip>
+  <showmyspace>false</showmyspace>
+  <obfuscation>false</obfuscation>
+  <orientation>1</orientation>
+  <bgcolor>
+  </bgcolor>
+  <direct>0</direct>
+  <debug>true</debug>
+</widget>

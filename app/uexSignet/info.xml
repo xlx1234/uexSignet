@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uexplugins>
+    <plugin
+        uexName="uexSignet" version="4.0.0" build="2019020101">
+        <info>0:云签名SDK插件</info>
+    </plugin>
+</uexplugins>

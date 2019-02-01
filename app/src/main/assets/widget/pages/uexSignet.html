@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/accommon.js"></script>
+    <title>login</title>
+    <script type="text/javascript">
+
+        function onUnReadMessageCountChanged(msg) {
+            var msgStr = JSON.stringify(msg);
+        }
+
+        accommon.ready(function() {
+            // alert("accommon.ready")
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="tit">uexSignet插件测试</div>
+    <div class="conbor">
+        <div class="consj">
+
+            <span>认证登录测试</span>
+
+            <span>username:</span>
+            
+            <input id="username" class="textbox" type="text" value="15313626106">
+            <span>password:</span><input id="password" class="textbox" type="text" value="zy280@appcan.cn">
+            
+            <input class="btn" type="button" value="setServerConfig" onClick="setServerConfig();">
+      
+        </div>
+    </div>
+</body>
+
+</html>
