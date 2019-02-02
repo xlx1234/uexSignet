@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <uexplugins>
-    <plugin name="com.zymobi.plugin.uexsignet.EUExSignet">
-        <method name="open"></method>
+    <plugin className="com.zymobi.plugin.uexsignet.EUExSignet" uexName="uexSignet">
+        <method name="findBackUser"/>
+        <method name="userLogin"/>
+        <method name="getUserList"/>
+        <method name="clearCert"/>
     </plugin>
 </uexplugins>
