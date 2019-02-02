@@ -4,13 +4,13 @@ repositories {
     flatDir {
         dirs 'libs'
     }
-    maven {
-        url 'https://raw.githubusercontent.com/android-plugin/mvn-repo/master/' //引擎aar仓库地址
-    }
+//    maven {
+//        url 'https://raw.githubusercontent.com/android-plugin/mvn-repo/master/' //引擎aar仓库地址
+//    }
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 21
     defaultConfig {
         applicationId "com.zymobi.plugin.uexsignet"
         minSdkVersion 14
@@ -30,7 +30,10 @@ android {
 
 dependencies {
     implementation fileTree(include: '*.jar', dir: 'libs')
-    implementation 'org.appcan:engine:4.0.0+:systemRelease@aar'
+    //依赖AppCan引擎包
+//    implementation 'org.appcan:engine:4.0.0+:systemRelease@aar'
+    implementation (name:'appcan-engine-release-4.1.13', ext:'aar')
 }
 
-apply from: "https://raw.githubusercontent.com/android-plugin/gradle-plugin/master/buildPlugin.gradle"
+//apply from: "https://raw.githubusercontent.com/android-plugin/gradle-plugin/master/buildPlugin.gradle"
+apply from: "buildCustomPlugin.gradle"
