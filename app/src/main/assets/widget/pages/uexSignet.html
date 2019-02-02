@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/accommon.js"></script>
+    <title>uexSignet插件测试</title>
+    <script type="text/javascript">
+
+        function findBackUser() {
+            var jsonData = {
+                userName:"测试用户",
+                idCardNumber:"210624200001017496",
+                idCardType:1,
+            }
+            // idCardType取值：
+            //0 HK,
+            //1 HZ,
+            //2 JG,
+            //3 JI,
+            //4 JL,
+            //5 SB,
+            //6 SF,
+            //7 SG,
+            //8 WZ,
+            //9 XJ,
+            //10 GA;
+            uexSignet.findBackUser(JSON.stringify(jsonData), function(result){
+                alert(JSON.stringify("findBackUser: " + result));
+                console.log(JSON.stringify("findBackUser: " + result));
+            });
+        }
+
+        function findBackUserWithInputUI() {
+            var jsonData = {}
+            uexSignet.findBackUser(JSON.stringify(jsonData), function(result){
+                alert(JSON.stringify("findBackUser: " + result));
+                console.log(JSON.stringify("findBackUser: " + result));
+            });
+        }
+
+        function userLogin() {
+            var jsonData = {
+                msspId:"123456",
+                signId:"123456",
+            }
+            uexSignet.userLogin(JSON.stringify(jsonData), function(result){
+                alert(JSON.stringify("userLogin: " + result));
+                console.log(JSON.stringify("userLogin: " + result));
+            });
+        }
+
+        function getUserList() {
+            var result = uexSignet.getUserList();
+            alert(JSON.stringify("getUserList: " + result));
+            console.log(JSON.stringify("getUserList: " + result));
+        }
+
+        function clearCert() {
+            var jsonData = {
+                msspId:"123456",
+                certType:"123456",
+            }
+            // certType取值：
+            //0 ALL_CERT,
+            //1 RSA_SIGN_CERT,
+            //2 RSA_AUTH_CERT,
+            //3 SM2_SIGN_CERT,
+            //4 SM2_AUTH_CERT,
+            //5 ALL_OFFLINE_CERT,
+            //6 RSA_OFFLINE_SIGN_CERT,
+            //7 SM2_OFFLINE_SIGN_CERT;
+            var result = uexSignet.clearCert(JSON.stringify(jsonData));
+            alert(JSON.stringify("getUserList: " + result));
+            console.log(JSON.stringify("getUserList: " + result));
+        }
+
+        accommon.ready(function() {
+            // alert("accommon.ready")
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="tit">uexSignet插件测试</div>
+    <div class="conbor">
+        <div class="consj">
+
+            <span>认证登录测试</span>
+
+            <span>username:</span>
+            
+            <input id="username" class="textbox" type="text" value="15313626106">
+
+            <span>password:</span>
+
+            <input id="password" class="textbox" type="text" value="zy280@appcan.cn">
+            
+            <input class="btn" type="button" value="findBackUser" onClick="findBackUser();">
+            <input class="btn" type="button" value="findBackUser(界面用户输入)" onClick="findBackUserWithInputUI();">
+            <input class="btn" type="button" value="userLogin" onClick="userLogin();">
+            <input class="btn" type="button" value="getUserList" onClick="getUserList();">
+            <input class="btn" type="button" value="clearCert" onClick="clearCert();">
+      
+        </div>
+    </div>
+</body>
+
+</html>
