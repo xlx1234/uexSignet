@@ -9,7 +9,14 @@
     <script type="text/javascript" src="../js/accommon.js"></script>
     <title>uexSignet插件测试</title>
     <script type="text/javascript">
+        
+        // Android插件集成的特殊说明（与其他插件不同的地方）：
+        // 插件包中，assets中的内容需要修改其中的那个signet_config.json文件，其中包含对接的环境配置，目前写的是一个测试环境。
+        //TODO 后期可以考虑跟CA的SDK那边的人沟通，看看能否不采用这种配置方式（因为切环境还需要改插件，不好）。
 
+        // iOS插件集成的特殊说明：待完成
+
+        // 1. 找回用户（通过输入证件信息等，找回用户CA认证所需的个人证书。找回证书后，证书实体本身不需要前端维护，也不需要插件维护，是由插件内封装的SDK内部维护的）
         function findBackUser() {
             var jsonData = {
                 userName:"测试用户",
@@ -34,6 +41,7 @@
             });
         }
 
+        // 自带界面的找回证书，参数传空，会调用SDK的方法用于启动界面
         function findBackUserWithInputUI() {
             var jsonData = {}
             uexSignet.findBackUser(JSON.stringify(jsonData), function(result){
@@ -42,6 +50,7 @@
             });
         }
 
+        // 用户登录：通过EMM登录后，后端返回的msspId和signId等信息
         function userLogin() {
             var jsonData = {
                 msspId:"123456",
@@ -53,12 +62,14 @@
             });
         }
 
+        // 获取本地所有已经存储好了的证书（可用证书），用于检查本地是否存在证书，是否还需要调用findBackUser接口
         function getUserList() {
             var result = uexSignet.getUserList();
             alert(JSON.stringify("getUserList: " + result));
             console.log(JSON.stringify("getUserList: " + result));
         }
 
+        // 清空本地证书存储，按需求调用（比如注销时，是否需要清空证书？）
         function clearCert() {
             var jsonData = {
                 msspId:"123456",
@@ -90,16 +101,6 @@
     <div class="tit">uexSignet插件测试</div>
     <div class="conbor">
         <div class="consj">
-
-            <span>认证登录测试</span>
-
-            <span>username:</span>
-            
-            <input id="username" class="textbox" type="text" value="15313626106">
-
-            <span>password:</span>
-
-            <input id="password" class="textbox" type="text" value="zy280@appcan.cn">
             
             <input class="btn" type="button" value="findBackUser" onClick="findBackUser();">
             <input class="btn" type="button" value="findBackUser(界面用户输入)" onClick="findBackUserWithInputUI();">
