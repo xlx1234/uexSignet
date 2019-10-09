@@ -19,6 +19,7 @@ android {
         versionName "1.0"
         multiDexEnabled true
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -33,6 +34,7 @@ dependencies {
     //依赖AppCan引擎包
 //    implementation 'org.appcan:engine:4.0.0+:systemRelease@aar'
     implementation (name:'appcan-engine-release-4.1.13', ext:'aar')
+
 }
 
 //apply from: "https://raw.githubusercontent.com/android-plugin/gradle-plugin/master/buildPlugin.gradle"

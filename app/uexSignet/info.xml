@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexSignet" version="4.0.0" build="2019020301">
-        <info>0:云签名SDK插件</info>
+        uexName="uexSignet" version="4.0.5" build="2019020301">
+        <info>2:(测试环境)更新sdk</info>
+        <build>1:删除json文件中的注释,修改Mainfest.xml中权限空格问题</build>
+        <build>0:云签名SDK插件</build>
     </plugin>
 </uexplugins>
